@@ -11,6 +11,15 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+// Route::group(['prefix' => 'news'], function(){
+//     Route::get('', 'NewController@index')->name('news.index');
+//     Route::get('/create', 'NewController@create')->name('news.create');
+// });
+
+Route::get('/{any}', function () {
+    return view('new');
+})->where('any', '.*');
